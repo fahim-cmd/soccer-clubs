@@ -9,7 +9,7 @@ import { faFacebook, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-i
 const TeamDetails = () => {
     const { teamId } = useParams();
     const [teamDetails, setTeamDetails] = useState({})
-    console.log(teamDetails)
+    
     useEffect(() => {
         const url = `https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${teamId}
         `;
