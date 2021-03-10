@@ -3,8 +3,13 @@
     height: 220px;
     background: 
     linear-gradient(
-      rgba(255, 255, 255, 0.582), 
-      rgba(255, 255, 255, 0.45)
+      rgba(255, 255, 255, 0.829), 
+      rgba(255, 255, 255, 0.794)
     ),
-    url('../../images/barca.jpeg');
+    url('../../images/barca3.jpeg');
+}
+.socialIcon{
+  font-size: 30px;
+  margin-left: 8px;
+  cursor: pointer;
 }

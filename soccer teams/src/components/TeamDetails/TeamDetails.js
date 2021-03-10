@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import image from '../../images/barca.jpeg';
 import '../TeamDetails/TeamDetails.css';
 import TeamInfo from '../TeamInfo/TeamInfo';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFacebook, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons"
+import { Link } from 'react-router-dom';
 
 
 const TeamDetails = () => {
@@ -19,8 +19,9 @@ const TeamDetails = () => {
             .then(data => setTeamDetails(data.teams[0]))
     }, [])
 
+        const {strFacebook, strYoutube, strTwitter } = teamDetails;
     return (
-        <div style={{ backgroundColor: '#fb743e' }}>
+        <div style={{ backgroundColor: "#fb743e" }}>
             <div className="stadium" >
                 <img style={{ width: '14%' }} className=" h-100 py-4 d-block mx-auto" src={teamDetails.strTeamBadge} alt="" />
             </div>
@@ -33,7 +34,7 @@ const TeamDetails = () => {
                 </div>
             </div>
 
-            <div className='container' style={{ color: 'white' }}>
+            <div className="container" style={{ color: "white" }}>
                 <p >
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum cum doloremque atque voluptas pariatur, architecto minus mollitia voluptatem aspernatur odit amet officiis magni ea nemo officia sequi consectetur tenetur itaque repellat odio neque perferendis nesciunt ab est! Consectetur nesciunt nulla laudantium nisi eveniet obcaecati at autem commodi itaque ipsam id porro, architecto sed quisquam! Enim quos doloremque aliquam accusantium, nobis animi vel quibusdam cum assumenda eos minus ducimus error incidunt placeat magni repudiandae. Adipisci molestias enim, incidunt hic veritatis distinctio odit, neque eligendi voluptas labore, pariatur reprehenderit iure perspiciatis. Quasi repudiandae a asperiores dolor harum necessitatibus obcaecati, eum tempora sint?
                 </p>
@@ -42,10 +43,11 @@ const TeamDetails = () => {
                   
                 </p>
             </div>
+
             <footer className="container row justify-content-center my-4 mx-4 py-5 ">
-                <FontAwesomeIcon style={{fontSize: '30px', marginLeft: '75px'}} icon={faFacebook} /> 
-                <FontAwesomeIcon style={{fontSize: '30px', marginLeft: '8px'}} icon={faYoutube} />
-                <FontAwesomeIcon style={{fontSize: '30px', marginLeft: '8px'}} icon={faTwitter} />  
+                <Link to={strFacebook}><FontAwesomeIcon className="socialIcon" icon={faFacebook} /> </Link>
+                <Link to={strYoutube}> <FontAwesomeIcon className="socialIcon" icon={faYoutube} /></Link>
+                <Link to={strTwitter}><FontAwesomeIcon className="socialIcon" icon={faTwitter} /> </Link> 
             </footer>
         </div>
     );

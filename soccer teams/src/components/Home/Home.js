@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import TeamCard from '../TeamCard/TeamCard';
+import '../Home/Home.css';
 
 const Home = () => {
 
@@ -12,16 +13,15 @@ const Home = () => {
             .then(data => {
                 const newData = data.teams.slice(0, 20);
                 setTeams(newData)
-                // console.log(newData)
             })
     }, [])
 
     return (
-        <div>
-            <div>
-                Team tracker
+        <div style={{ backgroundColor: "#1e212d" }}>
+            <div className="homeImage">
+                <h2 className="soccerPic">SOCCER CLUBS</h2>
             </div>
-            <div className='container'>
+            <div className="container">
                 <div className="row d-flex  justify-content-between mx-5 ">
                     {
                         teams.map(team => <TeamCard team={team} key={team.idTeam}></TeamCard>)
