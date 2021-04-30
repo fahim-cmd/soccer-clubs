@@ -12,12 +12,11 @@ function App() {
   return (
     <Router>
       <Home/>
-      
+            
        <Switch>
           <Route  path="/home">
             <Home />
-          </Route>
-          
+          </Route>          
         </Switch>
     </Router>
   );
